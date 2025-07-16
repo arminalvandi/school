@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسه فضیلت - صفحه اصلی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">ف</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">مدرسه فضیلت</h1>
+                        <p class="text-sm text-gray-600">آموزش با کیفیت، آینده روشن</p>
+                    </div>
+                </div>
+                
+                <button onclick="location.href='panel-selection.html'" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                    ورود
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold mb-6">به مدرسه فضیلت خوش آمدید</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">مکانی برای رشد، یادگیری و ساختن آینده‌ای بهتر برای فرزندان شما</p>
+            <div class="flex justify-center space-x-4 space-x-reverse">
+                <button onclick="scrollToSection('about')" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                    درباره ما
+                </button>
+                <button onclick="scrollToSection('contact')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition-colors">
+                    تماس با ما
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">درباره مدرسه فضیلت</h3>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-4">رسالت ما</h4>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        مدرسه فضیلت با بیش از ۲۰ سال تجربه در زمینه آموزش، متعهد به ارائه بهترین خدمات آموزشی و پرورش نسلی خلاق، متفکر و مسئول است. ما بر این باوریم که هر دانش‌آموز استعدادهای منحصر به فردی دارد که باید کشف و پرورش یابد.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-blue-600">۱۲۰۰+</div>
+                            <div class="text-sm text-gray-600">دانش‌آموز</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <div class="text-2xl font-bold text-green-600">۸۵+</div>
+                            <div class="text-sm text-gray-600">معلم مجرب</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-100 to-purple-100 p-8 rounded-2xl">
+                    <div class="text-center">
+                        <div class="w-32 h-32 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                            <span class="text-white text-4xl">🎓</span>
+                        </div>
+                        <h5 class="text-xl font-semibold text-gray-800 mb-4">ویژگی‌های مدرسه</h5>
+                        <ul class="text-gray-600 space-y-2">
+                            <li>✅ کلاس‌های مجهز و مدرن</li>
+                            <li>✅ معلمان متخصص و مجرب</li>
+                            <li>✅ فعالیت‌های فوق برنامه</li>
+                            <li>✅ محیط امن و دوستانه</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Teaser -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">نگاهی به مدرسه فضیلت</h3>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-2xl">📚</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">آموزش کیفی</h4>
+                        <p class="text-gray-600">برنامه‌های آموزشی متنوع و به‌روز برای تمامی مقاطع تحصیلی</p>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-2xl">🏆</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">موفقیت‌های درخشان</h4>
+                        <p class="text-gray-600">کسب رتبه‌های برتر در آزمون‌های سراسری و المپیادهای علمی</p>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-2xl">🎨</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">فعالیت‌های هنری</h4>
+                        <p class="text-gray-600">کلاس‌های موسیقی، نقاشی، و فعالیت‌های ورزشی متنوع</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">اخبار و اطلاعیه‌ها</h3>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium">اطلاعیه</span>
+                            <span class="text-gray-500 text-sm mr-3">۱۴۰۳/۰۸/۱۵</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">شروع ثبت‌نام سال تحصیلی جدید</h4>
+                        <p class="text-gray-600 text-sm">ثبت‌نام برای سال تحصیلی ۱۴۰۳-۱۴۰۴ از تاریخ ۱۴۰۳/۰۹/۰۱ آغاز می‌شود.</p>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">خبر</span>
+                            <span class="text-gray-500 text-sm mr-3">۱۴۰۳/۰۸/۱۰</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">کسب مقام اول در مسابقات علمی</h4>
+                        <p class="text-gray-600 text-sm">دانش‌آموزان مدرسه فضیلت در مسابقات ریاضی استان مقام اول را کسب کردند.</p>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white border border-gray-200 rounded-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">رویداد</span>
+                            <span class="text-gray-500 text-sm mr-3">۱۴۰۳/۰۸/۰۵</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">جشنواره علم و فناوری</h4>
+                        <p class="text-gray-600 text-sm">برگزاری جشنواره علم و فناوری با حضور دانش‌آموزان و اولیا.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button onclick="showAllNews()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    مشاهده همه اخبار
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">تماس با ما</h3>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-6">اطلاعات تماس</h4>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 space-x-reverse">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-blue-600 text-xl">📞</span>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-1">تلفن تماس</h5>
+                                <p class="text-gray-600">۰۲۱-۱۲۳۴۵۶۷۸</p>
+                                <p class="text-gray-600">۰۲۱-۸۷۶۵۴۳۲۱</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 space-x-reverse">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-green-600 text-xl">📍</span>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-1">آدرس</h5>
+                                <p class="text-gray-600">تهران، خیابان ولیعصر، نرسیده به میدان ونک، کوچه فضیلت، پلاک ۱۲۳</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4 space-x-reverse">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600 text-xl">⏰</span>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-1">ساعات کاری</h5>
+                                <p class="text-gray-600">شنبه تا چهارشنبه: ۷:۳۰ - ۱۴:۳۰</p>
+                                <p class="text-gray-600">پنج‌شنبه: ۷:۳۰ - ۱۲:۳۰</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-6">موقعیت مکانی</h4>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="bg-gradient-to-br from-blue-50 to-purple-50 h-64 rounded-lg flex items-center justify-center mb-4">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center pulse-animation">
+                                    <span class="text-white text-2xl">📍</span>
+                                </div>
+                                <p class="text-gray-600 font-medium">مدرسه فضیلت</p>
+                                <p class="text-sm text-gray-500">خیابان ولیعصر، تهران</p>
+                            </div>
+                        </div>
+                        <button onclick="openMap()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
+                            مشاهده در نقشه
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 space-x-reverse mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">ف</span>
+                        </div>
+                        <h4 class="text-xl font-bold">مدرسه فضیلت</h4>
+                    </div>
+                    <p class="text-gray-300 mb-4">آموزش با کیفیت، آینده روشن</p>
+                    <p class="text-gray-400 text-sm">مدرسه فضیلت با افتخار در خدمت آموزش نسل آینده</p>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4">لینک‌های مفید</h5>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">درباره ما</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">اخبار</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">تماس با ما</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">ثبت‌نام</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4">تماس با ما</h5>
+                    <div class="space-y-2 text-gray-300">
+                        <p>📞 ۰۲۱-۱۲۳۴۵۶۷۸</p>
+                        <p>📧 info@fazilat-school.ir</p>
+                        <p>📍 تهران، خیابان ولیعصر</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; ۱۴۰۳ مدرسه فضیلت. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <
