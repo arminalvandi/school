@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="فا" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>انتخاب پنل - مدرسه فضیلت</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+        .panel-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .panel-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        .panel-icon {
+            transition: all 0.3s ease;
+        }
+        .panel-card:hover .panel-icon {
+            transform: scale(1.2);
+        }
+        .floating-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(102, 126, 234, 0.8);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header with Logo -->
+    <header class="hero-gradient text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <!-- Logo -->
+                    <div class="w-16 h-16 relative floating-animation">
+                        <svg viewBox="0 0 120 120" class="w-full h-full">
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#7C3AED;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+
+                            <circle cx="60" cy="60" r="58" fill="url(#logoGradient)" stroke="#fff" stroke-width="2" />
+                            <circle cx="60" cy="60" r="45" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" />
+
+                            <g transform="translate(60,60)">
+                                <path d="M-15,-20 Q-15,-25 -10,-25 L10,-25 Q15,-25 15,-20 Q15,-15 10,-15 L-5,-15 L-5,5 Q-5,10 -10,10 Q-15,10 -15,5 Z"
+                                    fill="white" opacity="0.95" />
+                                <circle cx="0" cy="20" r="4" fill="white" opacity="0.95" />
+                                <circle cx="-20" cy="-10" r="2" fill="rgba(255,255,255,0.6)" />
+                                <circle cx="20" cy="-5" r="1.5" fill="rgba(255,255,255,0.6)" />
+                            </g>
+
+                            <text x="60" y="105" text-anchor="middle" fill="white" font-size="8" font-weight="bold" opacity="0.8">۱۳۷۰</text>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold">مدرسه فضیلت</h1>
+                        <p class="text-lg opacity-90">انتخاب پنل کاربری</p>
+                    </div>
+                </div>
+
+                <button onclick="goHome()" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-2 rounded-lg font-medium transition-all">
+                    بازگشت به خانه
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">انتخاب پنل کاربری</h2>
+                <p class="text-xl text-gray-600">لطفاً نوع کاربری خود را انتخاب کنید</p>
+                <div class="w-32 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-6"></div>
+            </div>
+
+            <!-- Panels Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                <!-- Super Admin Panel -->
+                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg pulse-glow" onclick="selectPanel('superadmin')">
+                    <div class="text-center">
+                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center">
+                            <span class="text-3xl text-white">👑</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">سوپر مدیر</h3>
+                        <p class="text-gray-600 mb-4">مدیریت کل سیستم و تنظیمات پیشرفته</p>
+                        <div class="bg-red-50 text-red-700 px-4 py-2 rounded-lg text-sm font-medium">
+                            دسترسی کامل
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manager Panel -->
+                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg" onclick="selectPanel('manager')">
+                    <div class="text-center">
+                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
+                            <span class="text-3xl text-white">🏢</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">مدیر</h3>
+                        <p class="text-gray-600 mb-4">مدیریت کلی مدرسه و نظارت بر امور</p>
+                        <div class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-medium">
+                            مدیریت اصلی
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deputy Panel -->
+                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg" onclick="selectPanel('deputy')">
+                    <div class="text-center">
+                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-violet-600 rounded-full flex items-center justify-center">
+                            <span class="text-3xl text-white">👨‍💼</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">معاون</h3>
+                        <p class="text-gray-600 mb-4">کمک به مدیر و اجرای امور روزانه</p>
+                        <div class="bg-purple-50 text-purple-700 px-4 py-2 rounded-lg text-sm font-medium">
+                            امور اجرایی
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Counselor Panel -->
+                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg" onclick="selectPanel('counselor')">
+                    <div class="text-center">
+                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+                            <span class="text-3xl text-white">🧠</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">مشاور</h3>
+                        <p class="text-gray-600 mb-4">راهنمایی تحصیلی و مشاوره دانش‌آموزان</p>
+                        <div class="bg-green-50 text-green-700 px-4 py-2 rounded-lg text-sm font-medium">
+                            راهنمایی و مشاوره
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Panel -->
+                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg" onclick="selectPanel('teacher')">
+                    <div class="text-center">
+                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-amber-600 rounded-full flex items-center justify-center">
+                            <span class="text-3xl text-white">👩‍🏫</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">معلم</h3>
+                        <p class="text-gray-600 mb-4">تدریس، ارزیابی و پیگیری تحصیلی</p>
+                        <div class="bg-orange-50 text-orange-700 px-4 py-2 rounded-lg text-sm font-medium">
+                            آموزش و تدریس
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Panel -->
+                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg" onclick="selectPanel('student')">
+                    <div class="text-center">
+                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-full flex items-center justify-center">
+                            <span class="text-3xl text-white">🎓</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">دانش‌آموز</h3>
+                        <p class="text-gray-600 mb-4">دسترسی به دروس، نمرات و برنامه کلاسی</p>
+                        <div class="bg-cyan-50 text-cyan-700 px-4 py-2 rounded-lg text-sm font-medium">
+                            یادگیری و مطالعه
+                        </div>
+                    </div>
+                </div>
