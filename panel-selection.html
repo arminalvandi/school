@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="فا" dir="rtl">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,6 +48,10 @@
             50% {
                 box-shadow: 0 0 40px rgba(102, 126, 234, 0.8);
             }
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
@@ -108,98 +112,105 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
                 <!-- Super Admin Panel -->
-                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg pulse-glow" onclick="selectPanel('superadmin')">
-                    <div class="text-center">
-                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center">
-                            <span class="text-3xl text-white">👑</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">سوپر مدیر</h3>
-                        <p class="text-gray-600 mb-4">مدیریت کل سیستم و تنظیمات پیشرفته</p>
-                        <div class="bg-red-50 text-red-700 px-4 py-2 rounded-lg text-sm font-medium">
-                            دسترسی کامل
+                <a href="login.html?panel=superadmin" class="block">
+                    <div class="panel-card bg-white rounded-2xl p-8 shadow-lg pulse-glow">
+                        <div class="text-center">
+                            <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center">
+                                <span class="text-3xl text-white">👑</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">سوپر مدیر</h3>
+                            <p class="text-gray-600 mb-4">مدیریت کل سیستم و تنظیمات پیشرفته</p>
+                            <div class="bg-red-50 text-red-700 px-4 py-2 rounded-lg text-sm font-medium">
+                                دسترسی کامل
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Manager Panel -->
-                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg" onclick="selectPanel('manager')">
-                    <div class="text-center">
-                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
-                            <span class="text-3xl text-white">🏢</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">مدیر</h3>
-                        <p class="text-gray-600 mb-4">مدیریت کلی مدرسه و نظارت بر امور</p>
-                        <div class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-medium">
-                            مدیریت اصلی
+                <a href="login.html?panel=manager" class="block">
+                    <div class="panel-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-center">
+                            <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
+                                <span class="text-3xl text-white">🏢</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">مدیر</h3>
+                            <p class="text-gray-600 mb-4">مدیریت کلی مدرسه و نظارت بر امور</p>
+                            <div class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-medium">
+                                مدیریت اصلی
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Deputy Panel -->
-                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg" onclick="selectPanel('deputy')">
-                    <div class="text-center">
-                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-violet-600 rounded-full flex items-center justify-center">
-                            <span class="text-3xl text-white">👨‍💼</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">معاون</h3>
-                        <p class="text-gray-600 mb-4">کمک به مدیر و اجرای امور روزانه</p>
-                        <div class="bg-purple-50 text-purple-700 px-4 py-2 rounded-lg text-sm font-medium">
-                            امور اجرایی
+                <a href="login.html?panel=deputy" class="block">
+                    <div class="panel-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-center">
+                            <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-violet-600 rounded-full flex items-center justify-center">
+                                <span class="text-3xl text-white">👨‍💼</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">معاون</h3>
+                            <p class="text-gray-600 mb-4">کمک به مدیر و اجرای امور روزانه</p>
+                            <div class="bg-purple-50 text-purple-700 px-4 py-2 rounded-lg text-sm font-medium">
+                                امور اجرایی
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Counselor Panel -->
-                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg" onclick="selectPanel('counselor')">
-                    <div class="text-center">
-                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
-                            <span class="text-3xl text-white">🧠</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">مشاور</h3>
-                        <p class="text-gray-600 mb-4">راهنمایی تحصیلی و مشاوره دانش‌آموزان</p>
-                        <div class="bg-green-50 text-green-700 px-4 py-2 rounded-lg text-sm font-medium">
-                            راهنمایی و مشاوره
+                <a href="login.html?panel=counselor" class="block">
+                    <div class="panel-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-center">
+                            <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+                                <span class="text-3xl text-white">🧠</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">مشاور</h3>
+                            <p class="text-gray-600 mb-4">راهنمایی تحصیلی و مشاوره دانش‌آموزان</p>
+                            <div class="bg-green-50 text-green-700 px-4 py-2 rounded-lg text-sm font-medium">
+                                راهنمایی و مشاوره
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Teacher Panel -->
-                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg" onclick="selectPanel('teacher')">
-                    <div class="text-center">
-                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-amber-600 rounded-full flex items-center justify-center">
-                            <span class="text-3xl text-white">👩‍🏫</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">معلم</h3>
-                        <p class="text-gray-600 mb-4">تدریس، ارزیابی و پیگیری تحصیلی</p>
-                        <div class="bg-orange-50 text-orange-700 px-4 py-2 rounded-lg text-sm font-medium">
-                            آموزش و تدریس
+                <a href="login.html?panel=teacher" class="block">
+                    <div class="panel-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-center">
+                            <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-amber-600 rounded-full flex items-center justify-center">
+                                <span class="text-3xl text-white">👩‍🏫</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">معلم</h3>
+                            <p class="text-gray-600 mb-4">تدریس، ارزیابی و پیگیری تحصیلی</p>
+                            <div class="bg-orange-50 text-orange-700 px-4 py-2 rounded-lg text-sm font-medium">
+                                آموزش و تدریس
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Student Panel -->
-                <div class="panel-card bg-white rounded-2xl p-8 shadow-lg" onclick="selectPanel('student')">
-                    <div class="text-center">
-                        <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-full flex items-center justify-center">
-                            <span class="text-3xl text-white">🎓</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-3">دانش‌آموز</h3>
-                        <p class="text-gray-600 mb-4">دسترسی به دروس، نمرات و برنامه کلاسی</p>
-                        <div class="bg-cyan-50 text-cyan-700 px-4 py-2 rounded-lg text-sm font-medium">
-                            یادگیری و مطالعه
+                <a href="login.html?panel=student" class="block">
+                    <div class="panel-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="text-center">
+                            <div class="panel-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-full flex items-center justify-center">
+                                <span class="text-3xl text-white">🎓</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">دانش‌آموز</h3>
+                            <p class="text-gray-600 mb-4">دسترسی به دروس، نمرات و برنامه کلاسی</p>
+                            <div class="bg-cyan-50 text-cyan-700 px-4 py-2 rounded-lg text-sm font-medium">
+                                یادگیری و مطالعه
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </main>
 
-    <!-- اسکریپت برای هدایت به صفحه ورود -->
     <script>
-        function selectPanel(panel) {
-            window.location.href = login.html?panel=${panel};
-        }
-
         function goHome() {
             window.location.href = "index.html";
         }
