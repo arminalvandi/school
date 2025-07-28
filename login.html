@@ -1,239 +1,58 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ورود - مدرسه فضیلت</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .captcha-box {
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-            border: 2px dashed #999;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 3px;
-            user-select: none;
-        }
-        
-        .input-field:focus {
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود به پنل - مدرسه فضیلت</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
-        <!-- Header -->
-        <div class="text-center mb-8">
-            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-                </svg>
-            </div>
-            <h1 class="text-2xl font-bold text-gray-800 mb-2">مدرسه فضیلت</h1>
-            <p class="text-gray-600">ورود به سامانه</p>
-        </div>
+<body class="bg-gradient-to-br from-purple-700 to-purple-400 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
+    <h2 class="text-2xl font-bold mb-6 text-center text-purple-700">ورود به سامانه</h2>
+    <form id="loginForm" class="space-y-4">
+      <div>
+        <label for="username" class="block mb-1 text-sm font-medium text-gray-700">نام کاربری</label>
+        <input type="text" id="username" name="username" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+      </div>
+      <div>
+        <label for="password" class="block mb-1 text-sm font-medium text-gray-700">رمز عبور</label>
+        <input type="password" id="password" name="password" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+      </div>
+      <button type="submit" class="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition">ورود</button>
+    </form>
+    <p id="errorMessage" class="mt-4 text-red-500 text-sm text-center hidden">نام کاربری یا رمز عبور نادرست است</p>
+  </div>
 
-        <!-- Login Form -->
-        <form id="loginForm" class="space-y-6">
-            <!-- Username Field -->
-            <div>
-                <label for="username" class="block text-sm font-medium text-gray-700 mb-2">نام کاربری</label>
-                <input 
-                    type="text" 
-                    id="username" 
-                    name="username" 
-                    required
-                    class="input-field w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
-                    placeholder="نام کاربری خود را وارد کنید"
-                >
-            </div>
+  <script>
+    const userAccounts = {
+      modir: "1234",
+      moaven: "2222",
+      moshaver: "3333",
+      moalem: "4444",
+      daneshamooz: "5555",
+      superadmin: "0000"
+    };
 
-            <!-- Password Field -->
-            <div>
-                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">رمز عبور</label>
-                <div class="relative">
-                    <input 
-                        type="password" 
-                        id="password" 
-                        name="password" 
-                        required
-                        class="input-field w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 pl-12"
-                        placeholder="رمز عبور خود را وارد کنید"
-                    >
-                    <button 
-                        type="button" 
-                        id="togglePassword"
-                        class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
-                    >
-                        <svg id="eyeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+    const panelRedirect = {
+      modir: "modir-panel.html",
+      moaven: "moaven-panel.html",
+      moshaver: "moshaver-panel.html",
+      moalem: "moalem-panel.html",
+      daneshamooz: "daneshamooz-panel.html",
+      superadmin: "superadmin-panel.html"
+    };
 
-            <!-- CAPTCHA Field -->
-            <div>
-                <label for="captcha" class="block text-sm font-medium text-gray-700 mb-2">کد امنیتی</label>
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <div class="captcha-box px-4 py-3 rounded-lg text-center text-xl font-bold text-gray-700 bg-gray-100 min-w-[120px]" id="captchaDisplay">
-                        A7K9M
-                    </div>
-                    <button 
-                        type="button" 
-                        id="refreshCaptcha"
-                        class="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-all duration-200"
-                        title="تازه‌سازی کد"
-                    >
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                        </svg>
-                    </button>
-                </div>
-                <input 
-                    type="text" 
-                    id="captcha" 
-                    name="captcha" 
-                    required
-                    class="input-field w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 mt-3"
-                    placeholder="کد امنیتی را وارد کنید"
-                >
-            </div>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
 
-            <!-- Remember Me -->
-            <div class="flex items-center">
-                <input 
-                    type="checkbox" 
-                    id="remember" 
-                    name="remember"
-                    class="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
-                >
-                <label for="remember" class="mr-2 text-sm text-gray-700">مرا به خاطر بسپار</label>
-            </div>
-
-            <!-- Login Button -->
-            <button 
-                type="submit"
-                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] focus:ring-4 focus:ring-blue-300"
-            >
-                ورود به سامانه
-            </button>
-
-            <!-- Forgot Password -->
-            <div class="text-center">
-                <a href="#" class="text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors">
-                    رمز عبور خود را فراموش کرده‌اید؟
-                </a>
-            </div>
-        </form>
-
-        <!-- Footer -->
-        <div class="mt-8 pt-6 border-t border-gray-200 text-center">
-            <p class="text-xs text-gray-500">
-                © ۱۴۰۳ مدرسه فضیلت - تمامی حقوق محفوظ است
-            </p>
-        </div>
-    </div>
-
-    <script>
-        // Password toggle functionality
-        const togglePassword = document.getElementById('togglePassword');
-        const passwordField = document.getElementById('password');
-        const eyeIcon = document.getElementById('eyeIcon');
-
-        togglePassword.addEventListener('click', function() {
-            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordField.setAttribute('type', type);
-            
-            if (type === 'text') {
-                eyeIcon.innerHTML = `
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
-                `;
-            } else {
-                eyeIcon.innerHTML = `
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                `;
-            }
-        });
-
-        // CAPTCHA functionality
-        const captchaDisplay = document.getElementById('captchaDisplay');
-        const refreshCaptcha = document.getElementById('refreshCaptcha');
-        let currentCaptcha = 'A7K9M';
-
-        function generateCaptcha() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            let result = '';
-            for (let i = 0; i < 5; i++) {
-                result += chars.charAt(Math.floor(Math.random() * chars.length));
-            }
-            return result;
-        }
-
-        refreshCaptcha.addEventListener('click', function() {
-            currentCaptcha = generateCaptcha();
-            captchaDisplay.textContent = currentCaptcha;
-            
-            // Add refresh animation
-            captchaDisplay.style.transform = 'rotate(360deg)';
-            setTimeout(() => {
-                captchaDisplay.style.transform = 'rotate(0deg)';
-            }, 300);
-        });
-
-        // Form submission
-        const loginForm = document.getElementById('loginForm');
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const captchaInput = document.getElementById('captcha').value;
-            
-            // Validate CAPTCHA
-            if (captchaInput.toUpperCase() !== currentCaptcha) {
-                alert('کد امنیتی اشتباه است. لطفاً دوباره تلاش کنید.');
-                document.getElementById('captcha').value = '';
-                document.getElementById('captcha').focus();
-                return;
-            }
-            
-            // Validate other fields
-            if (!username || !password) {
-                alert('لطفاً تمام فیلدها را پر کنید.');
-                return;
-            }
-            
-            // Show success message (in a real application, this would submit to a server)
-            alert('ورود موفقیت‌آمیز بود! در حال انتقال به داشبورد...');
-            
-            // Reset form
-            loginForm.reset();
-            currentCaptcha = generateCaptcha();
-            captchaDisplay.textContent = currentCaptcha;
-        });
-
-        // Add smooth transitions
-        document.querySelectorAll('.input-field').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.classList.add('scale-[1.02]');
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.classList.remove('scale-[1.02]');
-            });
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'960ccc11155d9730',t:'MTc1Mjc4NzM3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+      if (userAccounts[username] && userAccounts[username] === password) {
+        window.location.href = panelRedirect[username];
+      } else {
+        document.getElementById("errorMessage").classList.remove("hidden");
+      }
+    });
+  </script>
+</body>
 </html>
